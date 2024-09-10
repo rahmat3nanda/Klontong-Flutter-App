@@ -104,5 +104,5 @@ flutter:
 flutter_launcher_icons:
   android: "ic_launcher"
   ios: true
-  image_path: "asset/images/img_klontong.png"
+  image_path: "asset/images/img_klontong_fill.png"
   min_sdk_android: 21
