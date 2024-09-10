@@ -9,7 +9,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:klontong/common/constants.dart';
+import 'package:klontong/common/styles.dart';
 import 'package:klontong/model/app/singleton_model.dart';
 import 'package:klontong/page/home_page.dart';
 import 'package:klontong/tool/helper.dart';
@@ -64,17 +66,26 @@ class _SplashPageState extends State<SplashPage>
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SvgPicture.asset(
-              AppIcon.klontong,
-              width: 152,
+            Transform.translate(
+              offset: const Offset(-12, 0),
+              child: SvgPicture.asset(
+                AppIcon.klontong,
+                width: 152,
+              ),
             ),
             const SizedBox(height: 24, width: double.infinity),
-            const Text(
+            Text(
               "Klontong",
               style: TextStyle(
+                color: AppColor.primaryLight,
                 fontSize: 32,
                 fontWeight: FontWeight.w700,
               ),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              "Find your needs",
+              style: GoogleFonts.parisienne(fontSize: 24),
             ),
           ],
         ),
