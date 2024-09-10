@@ -14,9 +14,11 @@ class API {
 
 class APICategory {
   final String data = "category";
+
+  String detail(String id) => "category/$id";
 }
 
 class APIProduct {
-   String data(int page) => "product/$page";
-   String detail(String id) => "product/$id";
+  String data({int? page}) => "product${page == null ? "" : "$page"}";
+  String detail(String id) => "product/$id";
 }
