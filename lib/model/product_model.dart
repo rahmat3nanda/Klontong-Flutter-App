@@ -15,10 +15,10 @@ class ProductModel {
   final String? sku;
   final String? name;
   final String? description;
-  final int? weight;
-  final int? width;
-  final int? length;
-  final int? height;
+  final double? weight;
+  final double? width;
+  final double? length;
+  final double? height;
   final String? image;
   final int? price;
 
@@ -44,12 +44,12 @@ class ProductModel {
         sku: json["sku"],
         name: json["name"],
         description: json["description"],
-        weight: json["weight"],
-        width: json["width"],
-        length: json["length"],
-        height: json["height"],
+        weight: json["weight"]?.toDouble(),
+        width: json["width"]?.toDouble(),
+        length: json["length"]?.toDouble(),
+        height: json["height"]?.toDouble(),
         image: json["image"],
-        price: json["harga"],
+        price: json["price"],
       );
 
   Map<String, dynamic> toJson() => {
@@ -63,6 +63,6 @@ class ProductModel {
         "length": length,
         "height": height,
         "image": image,
-        "harga": price,
+        "price": price,
       };
 }
