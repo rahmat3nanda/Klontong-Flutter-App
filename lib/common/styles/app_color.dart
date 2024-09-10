@@ -10,9 +10,9 @@
 import 'package:flutter/material.dart';
 
 class AppColor {
-  static Color primaryLight = Color(0xff2BAA76);
-  static Color primary = Color(0xff248960);
-  static Color secondary = Color(0xFFf5c000);
-  static Color accent = Color(0xFFf5c000);
-  static Color formField = Color(0xFFF8F8F8);
+  static Color primaryLight = const Color(0xff2BAA76);
+  static Color primary = const Color(0xff248960);
+  static Color secondary = const Color(0xFFf5c000);
+  static Color accent = const Color(0xFFf5c000);
+  static Color formField = const Color(0xFFF8F8F8);
 }
