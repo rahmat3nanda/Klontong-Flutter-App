@@ -46,11 +46,8 @@ class RepoCategory {
     return await _dio.put(url: _api.category.detail(id), body: data);
   }
 
-  Future<dio.Response> delete(
-    String id, {
-    required Map<String, dynamic> data,
-  }) async {
-    return await _dio.delete(url: _api.category.detail(id), body: data);
+  Future<dio.Response> delete(String id) async {
+    return await _dio.delete(url: _api.category.detail(id));
   }
 }
 
@@ -74,10 +71,7 @@ class RepoProduct {
     return await _dio.put(url: _api.product.detail(id), body: data);
   }
 
-  Future<dio.Response> delete(
-    String id, {
-    required Map<String, dynamic> data,
-  }) async {
-    return await _dio.delete(url: _api.product.detail(id), body: data);
+  Future<dio.Response> delete(String id) async {
+    return await _dio.delete(url: _api.product.detail(id));
   }
 }

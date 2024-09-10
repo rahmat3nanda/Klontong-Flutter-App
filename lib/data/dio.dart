@@ -17,10 +17,10 @@ import 'package:klontong/common/constants.dart';
 class Dio {
   late d.Dio _dio;
 
-  Dio({Map<String, dynamic>? headers}) {
+  Dio({String? baseUrl, Map<String, dynamic>? headers}) {
     _dio = d.Dio();
     _dio.options = d.BaseOptions(
-      baseUrl: AppConfig.shared.baseUrlApi,
+      baseUrl: baseUrl ?? AppConfig.shared.baseUrlApi,
       headers: headers ??
           {
             "Accept": "application/json",
