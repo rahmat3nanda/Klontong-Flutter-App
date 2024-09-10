@@ -1,0 +1,1 @@
+enum AppScheme { dev, prod }
