@@ -11,6 +11,7 @@ const _path = "asset/images/";
 
 class AppImage {
   static String klontong = "klontong.png".withImagePath();
+  static String klontongFill = "klontong_fill.png".withImagePath();
 }
 
 extension AppImageString on String {

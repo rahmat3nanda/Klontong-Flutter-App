@@ -8,12 +8,11 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:klontong/tool/hex_color.dart';
 
 class AppColor {
-  static Color primaryLight = HexColor("c22f2f");
-  static Color primary = HexColor("ca0000");
-  static Color secondary = HexColor("f5c000");
-  static Color accent = HexColor("f5c000");
-  static Color formField = HexColor("F8F8F8");
+  static Color primaryLight = Color(0xff2BAA76);
+  static Color primary = Color(0xff248960);
+  static Color secondary = Color(0xFFf5c000);
+  static Color accent = Color(0xFFf5c000);
+  static Color formField = Color(0xFFF8F8F8);
 }
