@@ -1,0 +1,1 @@
+dart run seed.dart
