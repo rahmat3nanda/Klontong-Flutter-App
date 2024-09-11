@@ -22,7 +22,6 @@ class AppConfig {
   late AppScheme scheme;
   late String baseUrlApi;
   late AppVersionModel version;
-  late String? baseUrlImage;
 
   void initialize({
     required AppScheme scheme,
@@ -32,7 +31,6 @@ class AppConfig {
   }) {
     this.scheme = scheme;
     this.baseUrlApi = baseUrlApi;
-    this.baseUrlImage = baseUrlImage;
     this.version = version;
   }
 }
