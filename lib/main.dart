@@ -43,5 +43,5 @@ void main() async {
   );
 
   Bloc.observer = Observer();
-  runApp(const MyApp());
+  runApp(const App());
 }
