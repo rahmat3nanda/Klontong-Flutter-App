@@ -8,6 +8,7 @@
  */
 
 import 'package:flutter/material.dart';
+import 'package:klontong/model/category_model.dart';
 import 'package:klontong/model/user_model.dart';
 
 class SingletonModel {
@@ -29,6 +30,7 @@ class SingletonModel {
   BuildContext? context;
   UserModel? user;
   bool? isLoggedIn;
+  List<CategoryModel>? categories;
 
   void destroy() {
     _singleton = null;

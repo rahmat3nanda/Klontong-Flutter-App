@@ -200,3 +200,13 @@ extension FirstWhereExt<T> on List<T> {
     return null;
   }
 }
+
+extension IndexWhereExt<T> on List<T> {
+  /// The index of the first element satisfying [test], or `null` if there are none.
+  int? indexWhereOrNull(bool Function(T element) test) {
+    for (var i = 0; i < length; i++) {
+      if (test(this[i])) return i;
+    }
+    return null;
+  }
+}

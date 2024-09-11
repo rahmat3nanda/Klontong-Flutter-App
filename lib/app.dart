@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:klontong/bloc/auth/auth_bloc.dart';
+import 'package:klontong/bloc/category/category_bloc.dart';
 import 'package:klontong/common/configs.dart';
 import 'package:klontong/common/constants.dart';
 import 'package:klontong/common/styles.dart';
@@ -52,6 +53,9 @@ class _AppState extends State<App> {
       providers: [
         BlocProvider<AuthBloc>(
           create: (BuildContext context) => AuthBloc(AuthInitialState()),
+        ),
+        BlocProvider<CategoryBloc>(
+          create: (BuildContext context) => CategoryBloc(CategoryInitialState()),
         ),
       ],
       child: MaterialApp(
