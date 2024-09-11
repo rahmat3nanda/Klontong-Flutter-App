@@ -8,6 +8,7 @@
  */
 
 import 'package:flutter/material.dart';
+import 'package:klontong/model/user_model.dart';
 
 class SingletonModel {
   static SingletonModel? _singleton;
@@ -26,6 +27,8 @@ class SingletonModel {
   static SingletonModel get shared => _singleton ??= SingletonModel._internal();
 
   BuildContext? context;
+  UserModel? user;
+  bool? isLoggedIn;
 
   void destroy() {
     _singleton = null;

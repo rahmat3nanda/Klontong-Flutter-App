@@ -8,9 +8,14 @@
  */
 
 class AppString {
+  static AppStringData data = AppStringData();
   static const packageName = "id.nesd.klontong";
   static const appName = "Klontong";
   static const tagline = "Find your Needs";
   static const versionName = "1.0.0";
   static const versionCode = 1;
+}
+
+class AppStringData {
+  final String user = "user";
 }
