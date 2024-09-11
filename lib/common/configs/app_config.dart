@@ -26,7 +26,6 @@ class AppConfig {
   void initialize({
     required AppScheme scheme,
     required String baseUrlApi,
-    required String baseUrlImage,
     required AppVersionModel version,
   }) {
     this.scheme = scheme;

@@ -14,7 +14,8 @@ import 'package:klontong/data/API.dart';
 import 'package:klontong/model/category_model.dart';
 import 'package:klontong/model/product_model.dart';
 
-String endpoint = "{{Your endpoint from crudcrud.com; example: 70d5a655bca443c590631cc03907b1d0}}";
+// Your endpoint from crudcrud.com
+String endpoint = "70d5a655bca443c590631cc03907b1d0";
 String baseUrl = "https://crudcrud.com/api/$endpoint";
 API api = API();
 Dio dio = Dio();
