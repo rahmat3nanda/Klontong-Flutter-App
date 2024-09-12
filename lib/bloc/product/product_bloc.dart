@@ -65,7 +65,9 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
   void _create(ProductCreateEvent event, Emitter<ProductState> state) async {
     state(ProductInitialState());
     try {
+      int page = ((SingletonModel.shared.products?.length ?? 0) / 10).floor();
       Response res = await Request().product.create(
+            page,
             categoryId: event.category.id!,
             categoryName: event.category.name!,
             sku: event.sku,

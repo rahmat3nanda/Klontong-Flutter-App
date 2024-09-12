@@ -50,7 +50,8 @@ class RequestProduct {
     return _repo.product.data(page);
   }
 
-  Future<dio.Response> create({
+  Future<dio.Response> create(
+    int page, {
     required String categoryId,
     required String categoryName,
     required String sku,
@@ -63,7 +64,7 @@ class RequestProduct {
     required String image,
     required int price,
   }) {
-    return _repo.product.create(data: {
+    return _repo.product.create(page, data: {
       "category": {
         "_id": categoryId,
         "name": categoryName,

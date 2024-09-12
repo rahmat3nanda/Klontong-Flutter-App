@@ -56,8 +56,11 @@ class RepoProduct {
     return await _dio.get(url: _api.product.data(page: page));
   }
 
-  Future<dio.Response> create({required Map<String, dynamic> data}) async {
-    return await _dio.post(url: _api.product.data(), body: data);
+  Future<dio.Response> create(
+    int page, {
+    required Map<String, dynamic> data,
+  }) async {
+    return await _dio.post(url: _api.product.data(page: page), body: data);
   }
 
   Future<dio.Response> detail(String id) async {
