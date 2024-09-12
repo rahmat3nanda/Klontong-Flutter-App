@@ -14,6 +14,7 @@ import 'package:klontong/common/styles.dart';
 import 'package:klontong/dialog/app_alert_dialog.dart';
 import 'package:klontong/model/app/button_action_model.dart';
 import 'package:klontong/model/app/singleton_model.dart';
+import 'package:klontong/page/category_page.dart';
 import 'package:klontong/page/home_page.dart';
 import 'package:klontong/tool/helper.dart';
 import 'package:klontong/widget/loading_overlay.dart';
@@ -29,7 +30,7 @@ class _MainPageState extends State<MainPage>
     with SingleTickerProviderStateMixin {
   late Helper _helper;
   late TabController _tabController;
-  late bool _onLoggingOut;
+  late bool _isLoading;
   late int _page;
 
   @override
@@ -43,7 +44,7 @@ class _MainPageState extends State<MainPage>
         _page = _tabController.index;
       });
     });
-    _onLoggingOut = false;
+    _isLoading = false;
     _page = 0;
   }
 
@@ -60,8 +61,9 @@ class _MainPageState extends State<MainPage>
     });
   }
 
+
   void _onPopInvoked(bool invoke) async {
-    if (_onLoggingOut) {
+    if (_isLoading) {
       return;
     }
     if (_page != 0) {
@@ -97,6 +99,12 @@ class _MainPageState extends State<MainPage>
     }
   }
 
+  void _showLoading(bool b) {
+    setState(() {
+      _isLoading = b;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return PopScope(
@@ -104,8 +112,8 @@ class _MainPageState extends State<MainPage>
       onPopInvoked: _onPopInvoked,
       child: Scaffold(
         body: LoadingOverlay(
-          isLoading: _onLoggingOut,
-          color: Colors.white.withOpacity(0.6),
+          isLoading: _isLoading,
+          color: Colors.white.withValues(alpha: 0.6),
           progressIndicator: SpinKitWaveSpinner(
             color: AppColor.primaryLight,
             trackColor: AppColor.primary,
@@ -114,10 +122,10 @@ class _MainPageState extends State<MainPage>
           ),
           child: TabBarView(
             controller: _tabController,
-            children: const [
-              HomePage(),
-              HomePage(),
-              HomePage(),
+            children: [
+              const HomePage(),
+              CategoryPage(showLoading: _showLoading),
+              const HomePage(),
             ],
           ),
         ),
@@ -130,7 +138,7 @@ class _MainPageState extends State<MainPage>
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(.2),
+                    color: Colors.grey.withValues(alpha: .2),
                     spreadRadius: 3,
                     blurRadius: 5,
                   ),
@@ -138,7 +146,7 @@ class _MainPageState extends State<MainPage>
               ),
               child: ClipRRect(
                 borderRadius:
-                    const BorderRadius.vertical(top: Radius.circular(24)),
+                const BorderRadius.vertical(top: Radius.circular(24)),
                 child: BottomNavigationBar(
                   selectedFontSize: 10,
                   selectedItemColor: AppColor.primary,
@@ -155,7 +163,7 @@ class _MainPageState extends State<MainPage>
                     _itemMenu(
                       index: 1,
                       icon: FontAwesomeIcons.list,
-                      title: "Category",
+                      title: "Categories",
                     ),
                     _itemMenu(
                       index: 2,
@@ -168,11 +176,11 @@ class _MainPageState extends State<MainPage>
                 ),
               ),
             ),
-            if (_onLoggingOut)
+            if (_isLoading)
               Positioned.fill(
                 child: Opacity(
                   opacity: 0.5,
-                  child: Container(color: Colors.white.withOpacity(0.6)),
+                  child: Container(color: Colors.white.withValues(alpha: 0.6)),
                 ),
               ),
           ],
