@@ -16,6 +16,7 @@ import 'package:klontong/model/app/button_action_model.dart';
 import 'package:klontong/model/app/singleton_model.dart';
 import 'package:klontong/page/category_page.dart';
 import 'package:klontong/page/home_page.dart';
+import 'package:klontong/page/profile_page.dart';
 import 'package:klontong/tool/helper.dart';
 import 'package:klontong/widget/loading_overlay.dart';
 
@@ -125,7 +126,7 @@ class _MainPageState extends State<MainPage>
             children: [
               const HomePage(),
               CategoryPage(showLoading: _showLoading),
-              const HomePage(),
+              ProfilePage(showLoading: _showLoading),
             ],
           ),
         ),
