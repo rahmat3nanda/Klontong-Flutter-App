@@ -364,7 +364,12 @@ class _CategoryPageState extends State<CategoryPage> {
             ),
           ),
           confirmDismiss: (dir) => _confirmDismiss(dir, d),
-          child: ListTile(title: Text(d.name ?? ""), minTileHeight: 36),
+          child: ListTile(
+            title: Text(d.name ?? ""),
+            minTileHeight: 36,
+            onTap: () => _helper.showToast("Swipe item for Action"),
+            onLongPress: () => _helper.showToast("Swipe item for Action"),
+          ),
         );
       },
     );
