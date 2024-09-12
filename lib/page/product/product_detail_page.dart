@@ -1,9 +1,9 @@
 /*
  * *
  *  * product_detail_page.dart - klontong
- *  * Created by Rahmat Trinanda (rahmat3nanda@gmail.com) on 09/13/2024, 00:29
+ *  * Created by Rahmat Trinanda (rahmat3nanda@gmail.com) on 09/13/2024, 01:37
  *  * Copyright (c) 2024 . All rights reserved.
- *  * Last modified 09/13/2024, 00:29
+ *  * Last modified 09/13/2024, 01:07
  *  
  */
 
@@ -104,11 +104,12 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
         const SizedBox(height: 16),
         Text("Category: ${d.category?.name ?? "-"}"),
         const SizedBox(height: 4),
-        Text("SKU: ${d.sku}"),
+        Text("SKU: ${d.sku ?? "-"}"),
         const SizedBox(height: 4),
-        Text("Dimension: ${d.length} x ${d.width} x ${d.height}"),
+        Text(
+            "Dimension: ${d.length ?? "-"} cm x ${d.width ?? "-"} cm x ${d.height ?? "-"} cm"),
         const SizedBox(height: 4),
-        Text("Weight: ${d.weight} KG"),
+        Text("Weight: ${d.weight ?? "-"} KG"),
       ],
     );
   }

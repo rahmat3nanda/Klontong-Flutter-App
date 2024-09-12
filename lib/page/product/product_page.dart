@@ -1,9 +1,9 @@
 /*
  * *
  *  * product_page.dart - klontong
- *  * Created by Rahmat Trinanda (rahmat3nanda@gmail.com) on 09/10/2024, 21:17
+ *  * Created by Rahmat Trinanda (rahmat3nanda@gmail.com) on 09/13/2024, 01:27
  *  * Copyright (c) 2024 . All rights reserved.
- *  * Last modified 09/10/2024, 21:17
+ *  * Last modified 09/13/2024, 01:26
  *  
  */
 
@@ -18,6 +18,7 @@ import 'package:klontong/model/app/singleton_model.dart';
 import 'package:klontong/model/error_model.dart';
 import 'package:klontong/model/product_model.dart';
 import 'package:klontong/page/auth_page.dart';
+import 'package:klontong/page/product/product_add_page.dart';
 import 'package:klontong/page/product/product_detail_page.dart';
 import 'package:klontong/tool/helper.dart';
 import 'package:klontong/widget/app_bar_widget.dart';
@@ -76,6 +77,12 @@ class _ProductPageState extends State<ProductPage> {
     bool isAuth = await _checkAuth();
     if (!isAuth) {
       return;
+    }
+
+    bool? created =
+        await _helper.jumpToPage(context, page: const ProductAddPage());
+    if (created == true) {
+      _model = SingletonModel.withContext(context);
     }
   }
 
