@@ -8,7 +8,7 @@
  */
 
 class CategoryModel {
-  final String? name;
+  String? name;
   final String? id;
 
   CategoryModel({

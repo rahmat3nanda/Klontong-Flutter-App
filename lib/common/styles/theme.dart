@@ -1,4 +1,3 @@
-
 /*
  * *
  *  * theme.dart - klontong
@@ -45,16 +44,13 @@ class AppTheme {
         ),
         primaryColor: AppColor.primaryLight,
         primaryColorDark: AppColor.primary,
-        scaffoldBackgroundColor: Colors.black,
+        scaffoldBackgroundColor: Colors.white,
         visualDensity: VisualDensity.adaptivePlatformDensity,
         colorScheme: ColorScheme.fromSwatch().copyWith(
           secondary: AppColor.secondary,
         ),
         textTheme: GoogleFonts.poppinsTextTheme(
-          Theme.of(context).textTheme.apply(
-                bodyColor: Colors.white,
-                displayColor: Colors.white,
-              ),
+          Theme.of(context).textTheme.apply(),
         ),
         inputDecorationTheme: InputDecorationTheme(
           contentPadding: const EdgeInsets.symmetric(horizontal: 24.0),

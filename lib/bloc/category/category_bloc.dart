@@ -95,13 +95,12 @@ class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
   void _update(CategoryUpdateEvent event, Emitter<CategoryState> state) async {
     state(CategoryInitialState());
     try {
-      Response res =
-          await Request().category.update(event.id, name: event.name);
-      CategoryModel data = CategoryModel.fromJson(res.data);
+      await Request().category.update(event.id, name: event.name);
+      CategoryModel data = CategoryModel(id: event.id, name: event.name);
 
       SingletonModel.shared.categories ??= [];
       int? index = SingletonModel.shared.categories!
-          .indexWhereOrNull((e) => e.id == data.id);
+          .indexWhereOrNull((e) => e.id == event.id);
       if (index != null) {
         SingletonModel.shared.categories![index] = data;
       } else {
@@ -112,6 +111,7 @@ class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
 
       state(const CategoryUpdateSuccessState());
     } catch (e) {
+      AppLog.print(e);
       state(
         CategoryUpdateFailedState(_helper.dioErrorHandler(e)),
       );

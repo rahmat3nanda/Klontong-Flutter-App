@@ -70,7 +70,7 @@ Future openAppAlertDialog(
   return showGeneralDialog(
     barrierLabel: "App Alert Dialog",
     barrierDismissible: dismissible,
-    barrierColor: Colors.black.withOpacity(0.5),
+    barrierColor: Colors.black.withValues(alpha: 0.5),
     context: context,
     pageBuilder: (context, anim1, anim2) {
       return Theme(
