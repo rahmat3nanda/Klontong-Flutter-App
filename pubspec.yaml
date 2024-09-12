@@ -45,7 +45,9 @@ dependencies:
   fluttertoast: ^8.0.8
   flutter_spinkit: ^5.1.0
   rcache_flutter: ^1.1.2
+  cached_network_image: ^3.3.0
   font_awesome_flutter: ^10.7.0
+  money2: ^5.0.1
   pull_to_refresh:
     git:
       url: https://github.com/peng8350/flutter_pulltorefresh.git
