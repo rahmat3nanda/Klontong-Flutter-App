@@ -28,7 +28,7 @@ class Repo {
 
 class RepoCategory {
   Future<dio.Response> data() async {
-    return await _dio.post(url: _api.category.data);
+    return await _dio.get(url: _api.category.data);
   }
 
   Future<dio.Response> create({required Map<String, dynamic> data}) async {
@@ -53,7 +53,7 @@ class RepoCategory {
 
 class RepoProduct {
   Future<dio.Response> data(int page) async {
-    return await _dio.post(url: _api.product.data(page: page));
+    return await _dio.get(url: _api.product.data(page: page));
   }
 
   Future<dio.Response> create({required Map<String, dynamic> data}) async {
