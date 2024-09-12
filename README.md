@@ -1,16 +1,20 @@
-# klontong
+# Klontong
 
-A new Flutter project.
+A small convenience store wants to enter the 21st century by selling their products online.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+To define endpoint, you can define it in `main.dart` line `38`
+```dart
+String endpoint = "place endpoint here";
+```
 
-A few resources to get you started if this is your first Flutter project:
+To create dummy data, you can run the `run.sh` file or run this command
+```shell
+dart run seed.dart
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+To define endpoint for Seeder, you can define it in `seed.dart` line `18`
+```dart
+String endpoint = "place endpoint here";
+```
