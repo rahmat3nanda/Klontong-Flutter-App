@@ -10,9 +10,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:klontong/bloc/category/category_bloc.dart';
-import 'package:klontong/common/constants.dart';
 import 'package:klontong/common/styles.dart';
 import 'package:klontong/dialog/app_alert_dialog.dart';
 import 'package:klontong/dialog/category_field_dialog.dart';
@@ -22,6 +20,7 @@ import 'package:klontong/model/category_model.dart';
 import 'package:klontong/model/error_model.dart';
 import 'package:klontong/page/auth_page.dart';
 import 'package:klontong/tool/helper.dart';
+import 'package:klontong/widget/app_bar_widget.dart';
 import 'package:klontong/widget/reload_data_widget.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
@@ -214,6 +213,7 @@ class _CategoryPageState extends State<CategoryPage> {
 
   @override
   Widget build(BuildContext context) {
+    _model = SingletonModel.withContext(context);
     return BlocListener(
       bloc: _bloc,
       listener: (c, s) {
@@ -256,30 +256,7 @@ class _CategoryPageState extends State<CategoryPage> {
         bloc: _bloc,
         builder: (c, s) {
           return Scaffold(
-            appBar: AppBar(
-              title: Row(
-                children: [
-                  SvgPicture.asset(AppIcon.klontong,
-                      height: kToolbarHeight * 0.5),
-                  const SizedBox(width: 16),
-                  Text(
-                    "Klontong",
-                    style: TextStyle(
-                      color: AppColor.primaryLight,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                  Expanded(child: Container()),
-                  Text(
-                    "Categories",
-                    style: TextStyle(
-                      color: AppColor.primaryLight,
-                      fontSize: 16,
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            appBar: const AppBarWidget(subtitle: "Categories"),
             floatingActionButton: FloatingActionButton(
               backgroundColor: AppColor.primary,
               onPressed: _createItem,
