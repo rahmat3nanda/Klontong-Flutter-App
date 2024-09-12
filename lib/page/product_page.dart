@@ -1,6 +1,6 @@
 /*
  * *
- *  * home_page.dart - klontong
+ *  * product_page.dart - klontong
  *  * Created by Rahmat Trinanda (rahmat3nanda@gmail.com) on 09/10/2024, 21:17
  *  * Copyright (c) 2024 . All rights reserved.
  *  * Last modified 09/10/2024, 21:17
@@ -25,14 +25,14 @@ import 'package:klontong/widget/image_network_widget.dart';
 import 'package:klontong/widget/reload_data_widget.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class ProductPage extends StatefulWidget {
+  const ProductPage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<ProductPage> createState() => _ProductPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _ProductPageState extends State<ProductPage> {
   late SingletonModel _model;
   late Helper _helper;
   late ProductBloc _bloc;

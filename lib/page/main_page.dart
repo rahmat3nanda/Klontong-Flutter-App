@@ -15,7 +15,7 @@ import 'package:klontong/dialog/app_alert_dialog.dart';
 import 'package:klontong/model/app/button_action_model.dart';
 import 'package:klontong/model/app/singleton_model.dart';
 import 'package:klontong/page/category_page.dart';
-import 'package:klontong/page/home_page.dart';
+import 'package:klontong/page/product_page.dart';
 import 'package:klontong/page/profile_page.dart';
 import 'package:klontong/tool/helper.dart';
 import 'package:klontong/widget/loading_overlay.dart';
@@ -123,7 +123,7 @@ class _MainPageState extends State<MainPage>
           child: TabBarView(
             controller: _tabController,
             children: [
-              const HomePage(),
+              const ProductPage(),
               CategoryPage(showLoading: _showLoading),
               ProfilePage(showLoading: _showLoading),
             ],
