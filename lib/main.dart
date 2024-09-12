@@ -35,7 +35,7 @@ void main() async {
   AppLog.debugMode = false;
 
   // Your endpoint from crudcrud.com
-  String endpoint = "70d5a655bca443c590631cc03907b1d0";
+  String endpoint = "1d7ec491bbc6481ea7bccfe9da6d0e31";
   AppConfig.shared.initialize(
     scheme: AppScheme.prod,
     baseUrlApi: "https://crudcrud.com/api/$endpoint/",
