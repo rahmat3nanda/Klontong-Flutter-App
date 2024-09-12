@@ -18,7 +18,7 @@ import 'package:klontong/model/app/singleton_model.dart';
 import 'package:klontong/model/error_model.dart';
 import 'package:klontong/model/product_model.dart';
 import 'package:klontong/page/auth_page.dart';
-import 'package:klontong/page/product_detail_page.dart';
+import 'package:klontong/page/product/product_detail_page.dart';
 import 'package:klontong/tool/helper.dart';
 import 'package:klontong/widget/app_bar_widget.dart';
 import 'package:klontong/widget/image_network_widget.dart';
