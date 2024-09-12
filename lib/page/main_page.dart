@@ -62,7 +62,6 @@ class _MainPageState extends State<MainPage>
     });
   }
 
-
   void _onPopInvoked(bool invoke) async {
     if (_isLoading) {
       return;
@@ -147,7 +146,7 @@ class _MainPageState extends State<MainPage>
               ),
               child: ClipRRect(
                 borderRadius:
-                const BorderRadius.vertical(top: Radius.circular(24)),
+                    const BorderRadius.vertical(top: Radius.circular(24)),
                 child: BottomNavigationBar(
                   selectedFontSize: 10,
                   selectedItemColor: AppColor.primary,

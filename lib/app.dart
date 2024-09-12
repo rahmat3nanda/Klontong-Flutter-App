@@ -68,16 +68,13 @@ class _AppState extends State<App> {
         debugShowCheckedModeBanner: false,
         home: Stack(
           children: [
-            AnnotatedRegion<SystemUiOverlayStyle>(
-              value: SystemUiOverlayStyle.light,
-              child: MaterialApp(
-                localizationsDelegates: AppLocale.shared.delegates,
-                supportedLocales: AppLocale.shared.supports,
-                debugShowCheckedModeBanner: false,
-                title: AppString.appName,
-                theme: AppTheme.main(context),
-                home: const SplashPage(),
-              ),
+            MaterialApp(
+              localizationsDelegates: AppLocale.shared.delegates,
+              supportedLocales: AppLocale.shared.supports,
+              debugShowCheckedModeBanner: false,
+              title: AppString.appName,
+              theme: AppTheme.main(context),
+              home: const SplashPage(),
             ),
             if (AppConfig.shared.scheme == AppScheme.dev)
               IgnorePointer(
