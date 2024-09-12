@@ -15,6 +15,7 @@ import 'package:klontong/common/constants.dart';
 import 'package:klontong/data/request.dart';
 import 'package:klontong/model/app/singleton_model.dart';
 import 'package:klontong/model/product_model.dart';
+import 'package:klontong/model/response_model.dart';
 import 'package:klontong/tool/helper.dart';
 
 export 'package:klontong/bloc/product/product_event.dart';
@@ -37,6 +38,13 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
       Response res = await Request().product.data(event.page);
       List<ProductModel> data = List<ProductModel>.from(
           res.data.map((x) => ProductModel.fromJson(x)));
+
+      if (data.isEmpty) {
+        state(
+          ProductDataFailedState(ResponseModel(code: 404, message: "No Data")),
+        );
+        return;
+      }
 
       if (event.page == 0) {
         SingletonModel.shared.products = data;

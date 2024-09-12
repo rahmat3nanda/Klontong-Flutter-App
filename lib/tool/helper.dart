@@ -16,6 +16,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:intl/intl.dart';
 import 'package:klontong/model/app/singleton_model.dart';
 import 'package:klontong/model/response_model.dart';
+import 'package:money2/money2.dart';
 
 class Helper {
   Future exitApp() {
@@ -134,6 +135,21 @@ class Helper {
       onCopied();
     });
   }
+
+  String formatRupiah(int n) {
+    final Currency idr = Currency.create(
+      "IDR",
+      0,
+      symbol: "Rp",
+      pattern: "$n".length > 3 ? "S 0,000.00" : "S 0.00",
+      groupSeparator: '.',
+      decimalSeparator: ',',
+    );
+    Currencies().register(idr);
+
+    Money output = Money.fromIntWithCurrency(n, idr);
+    return output.toString();
+  }
 }
 
 extension EmailValidator on String {
@@ -208,5 +224,14 @@ extension IndexWhereExt<T> on List<T> {
       if (test(this[i])) return i;
     }
     return null;
+  }
+}
+
+extension IntHelper on int? {
+  String toMoney() {
+    if (this == null) {
+      return "";
+    }
+    return Helper().formatRupiah(this!);
   }
 }

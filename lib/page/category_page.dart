@@ -60,6 +60,8 @@ class _CategoryPageState extends State<CategoryPage> {
 
   void _getData({bool fromCache = false}) {
     _onLoad = true;
+    _error = null;
+
     if (fromCache && _model.categories != null) {
       _onLoad = false;
       return;
