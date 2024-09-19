@@ -113,7 +113,7 @@ class _MainPageState extends State<MainPage>
       child: Scaffold(
         body: LoadingOverlay(
           isLoading: _isLoading,
-          color: Colors.white.withValues(alpha: 0.6),
+          color: Colors.white.withOpacity(0.6),
           progressIndicator: SpinKitWaveSpinner(
             color: AppColor.primaryLight,
             trackColor: AppColor.primary,
@@ -138,7 +138,7 @@ class _MainPageState extends State<MainPage>
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withValues(alpha: .2),
+                    color: Colors.grey.withOpacity(.2),
                     spreadRadius: 3,
                     blurRadius: 5,
                   ),
@@ -180,7 +180,7 @@ class _MainPageState extends State<MainPage>
               Positioned.fill(
                 child: Opacity(
                   opacity: 0.5,
-                  child: Container(color: Colors.white.withValues(alpha: 0.6)),
+                  child: Container(color: Colors.white.withOpacity(0.6)),
                 ),
               ),
           ],

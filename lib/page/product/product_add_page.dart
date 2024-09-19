@@ -176,7 +176,7 @@ class _ProductAddPageState extends State<ProductAddPage> {
             appBar: AppBar(title: const Text("Create Product")),
             body: LoadingOverlay(
               isLoading: _onSave,
-              color: Colors.white.withValues(alpha: 0.6),
+              color: Colors.white.withOpacity(0.6),
               progressIndicator: SpinKitWaveSpinner(
                 color: AppColor.primaryLight,
                 trackColor: AppColor.primary,

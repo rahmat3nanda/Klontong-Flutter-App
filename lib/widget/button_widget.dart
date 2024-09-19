@@ -54,7 +54,7 @@ class _ButtonWidgetState extends State<ButtonWidget> {
         boxShadow: [
           if (widget.withShadow)
             BoxShadow(
-              color: Colors.grey.withValues(alpha: 0.5),
+              color: Colors.grey.withOpacity(0.5),
               spreadRadius: 1,
               blurRadius: 3,
               offset: const Offset(0, 3),

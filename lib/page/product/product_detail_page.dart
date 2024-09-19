@@ -45,13 +45,13 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                     children: [
                       ImageNetworkWidget(url: widget.item.image ?? ""),
                       Container(
-                        color: Colors.white.withValues(alpha: opacity),
+                        color: Colors.white.withOpacity(opacity),
                       ),
                       Align(
                         alignment: Alignment.bottomLeft,
                         child: Container(
                           color: AppColor.primary
-                              .withValues(alpha: 0.6 * (1 - opacity)),
+                              .withOpacity(0.6 * (1 - opacity)),
                           height: kToolbarHeight,
                           padding: EdgeInsets.only(
                             right: 16,

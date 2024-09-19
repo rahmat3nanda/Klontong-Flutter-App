@@ -87,7 +87,7 @@ Future openCategoryFieldDialog(
   return showGeneralDialog(
     barrierLabel: "$action Category Dialog",
     barrierDismissible: true,
-    barrierColor: Colors.black.withValues(alpha: 0.5),
+    barrierColor: Colors.black.withOpacity(0.5),
     context: context,
     pageBuilder: (context, anim1, anim2) => CategoryFieldDialog(
       action: action,
